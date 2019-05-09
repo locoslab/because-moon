@@ -1,0 +1,4 @@
+# i386 not available
+deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main
+deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main
+
