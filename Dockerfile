@@ -1,11 +1,10 @@
 FROM ubuntu:18.04
 
-MAINTAINER Locoslab <dockerhub@locoslab.com>
-
 LABEL name="because-moon"
-LABEL version="1.1.0"
+LABEL version="1.2.0"
 LABEL description="Build and test because-moon projects"
 LABEL vendor="Locoslab"
+LABEL maintainer="Locoslab <dockerhub@locoslab.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -45,6 +44,7 @@ RUN true && \
 		libc6-dbg:i386 \
 		gcovr \
 		lcov \
+		pandoc \
 		gdb \
 		cppcheck \
 		vera++ \
