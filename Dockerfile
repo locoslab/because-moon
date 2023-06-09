@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 LABEL name="because-moon"
-LABEL version="1.3.0"
+LABEL version="1.3.1"
 LABEL description="Build and test because-moon projects"
 LABEL vendor="LocosLab"
 LABEL maintainer="LocosLab <dockerhub@locoslab.com>"
@@ -28,6 +28,8 @@ RUN true && \
 		rsync \
 		ruby \
 		python3-pip \
+		python3-venv \
+		python-is-python3 \
 		zip \
 		unzip \
 		curl \
@@ -55,9 +57,9 @@ RUN true && \
 		clang-tidy-14 \
 		clang-format-14 \
 		openjdk-8-jdk-headless \
+		tshark \
 		libglib2.0-dev \
 		libglib2.0-dev:i386 \
-		tshark \
 	&& \
 	locale-gen en_US.UTF-8 && \
 	apt-get clean autoclean -y && \
@@ -65,7 +67,6 @@ RUN true && \
 	rm -rf /var/lib/apt/lists/* && \
 	true
 
-RUN ln -s /usr/bin/python3 /usr/bin/python
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV LANG en_US.UTF-8
