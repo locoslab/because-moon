@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 LABEL name="because-moon"
-LABEL version="1.3.1"
+LABEL version="1.4.1"
 LABEL description="Build and test because-moon projects"
 LABEL vendor="LocosLab"
 LABEL maintainer="LocosLab <dockerhub@locoslab.com>"
@@ -56,7 +56,9 @@ RUN true && \
 		clang-tools-14 \
 		clang-tidy-14 \
 		clang-format-14 \
-		openjdk-8-jdk-headless \
+		openjdk-11-jdk-headless \
+		openjdk-21-jdk-headless \
+		openjdk-25-jdk-headless \
 		tshark \
 		libglib2.0-dev \
 		libglib2.0-dev:i386 \
@@ -68,9 +70,9 @@ RUN true && \
 	true
 
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 CMD ["/bin/bash"]
 
